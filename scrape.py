@@ -54,8 +54,9 @@ def crawl(max_queue_size, seeds):
                 # BUT IT'S OK.
             emails_found = email_regex.findall(soup.prettify().replace("mailto:", " "))
             for email in emails_found:
-                print("Found email: " + email)
-                write_new_address(email)
+                if not (email.endswith(".png") or email.endswith(".jpg")):
+                    print("Found email: " + email)
+                    write_new_address(email)
         except Exception as e:
             print("error'ed, but moving on.")
             print(e)
