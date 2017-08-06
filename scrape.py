@@ -62,7 +62,7 @@ def crawl(max_queue_size, seeds):
 
 if len(sys.argv) is not 3:
     print("Usage: <comma separated seed urls> <max queue size>")
-    print sys.argv
+    print(sys.argv)
 else:
     seeds = sys.argv[1].split(",")
     max_size = int(sys.argv[2])
