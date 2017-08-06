@@ -57,7 +57,7 @@ def crawl(max_queue_size, seeds):
                 print("Found email: " + email)
                 write_new_address(email)
         except Exception as e:
-            print "error'ed, but moving on."
+            print("error'ed, but moving on.")
             print(e)
 
 if len(sys.argv) is not 3:
