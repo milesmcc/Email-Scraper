@@ -36,7 +36,7 @@ def crawl(max_queue_size, seeds):
     # max queue size for performance reasons, mostly
     urlpool = [seed for seed in seeds] # reiterate for shallow clone
     while len(urlpool) is not 0:
-        print "Queue size: " + str(len(urlpool))
+        print("Queue size: " + str(len(urlpool)))
         try:
             random.shuffle(urlpool) # it's not the most efficient way, but it's the most pythonic
             url = urlpool.pop()
