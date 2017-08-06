@@ -25,10 +25,13 @@ mini_dedup = [] # for local deduplication
 
 # write a new email address to the file
 def write_new_address(address):
-    if address.strip() not in mini_dedup: # I could assign address.strip() to a variable but I won't
-        with open("addresses.txt", "a+") as outfile:
-            outfile.write(address.strip() + "\n")
-            mini_dedup.append(address.strip())
+    try:
+        if address.strip() not in mini_dedup: # I could assign address.strip() to a variable but I won't
+            with open("addresses.txt", "a+") as outfile:
+                outfile.write(address.strip() + "\n")
+                mini_dedup.append(address.strip())
+    except:
+        print("Error on writing email address!")
 
 # scrape scrape scrape
 def crawl(max_queue_size, seeds):
